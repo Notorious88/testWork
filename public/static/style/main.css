@@ -1,0 +1,105 @@
+nav {
+    background: darkgray;
+    display: flex;
+    justify-content: space-around;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    transition: 1s;
+}
+
+nav a:hover {
+    color: black;
+    transition: 1s;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+}
+
+.form form {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form input {
+    margin-bottom: 10px;
+}
+
+
+.itemBox {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px silver solid;
+    border-radius: 5px;
+    margin-top: 40px;
+}
+
+
+.itemBox a {
+    color: black;
+    transition: 1s;
+}
+
+.itemBox a:hover {
+    color: silver;
+    transition: 1s;
+}
+
+.itemOne {
+    margin-top: 40px;
+}
+
+.itemOne div {
+    text-align: center;
+}
+
+#change{
+    margin-top: 30px;
+}
+
+.footerNav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%
+}
+
+
+
+
+
+
+
+
+.notFound {
+    text-align: center;
+    margin-top: 100px;
+    color: red;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+#createSuccess {
+    color: green;
+    margin-top: 10px;
+}

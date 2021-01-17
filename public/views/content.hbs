@@ -1,0 +1,24 @@
+<section>
+    {{> topMenu }}
+    <div class="container">
+        <div class="row gy-4">
+            {{#each items}}
+                {{#with this}}
+                    <div class="col-6 itemBox">
+                        <p>Name: {{ name }}</p>
+                        <a href="/show/{{ id }}">Show Page Item</a>
+                    </div>
+                {{/with }}
+            {{/each}}
+        </div>
+    </div>
+</section>
+<footer class="footerNav">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end">
+            <ul id="w_pagination_list">
+                {{{pagination}}}
+            </ul>
+        </ul>
+    </nav>
+</footer>

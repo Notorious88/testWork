@@ -1,0 +1,25 @@
+{
+  "name": "testwork",
+  "version": "1.0.0",
+  "main": "app",
+  "scripts": {
+    "dev": "NODE_ENV=dev nodemon app.js",
+    "start": "NODE_ENV=prod node app.js"
+  },
+  "author": "notorious8818@gmail.com",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "hbs": "^4.1.1",
+    "mongoose": "^5.11.11",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7"
+  }
+}

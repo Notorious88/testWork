@@ -1,0 +1,1 @@
+sudo docker run -it -p 9000:3000 -d --shm-size=1g test-work:dev

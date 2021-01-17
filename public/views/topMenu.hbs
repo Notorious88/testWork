@@ -1,0 +1,18 @@
+<nav>
+    <div>
+        <ul>
+            <li><a href="/">Gallery</a></li>
+            <li><a href="/createItem">Create item</a></li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            {{#if author}}
+                <li><a href="/user/logout">Logout</a></li>
+            {{else}}
+                <li><a href="/signIn">signIn</a></li>
+                <li><a href="/signUp">signUp</a></li>
+            {{/if}}
+        </ul>
+    </div>
+</nav>
