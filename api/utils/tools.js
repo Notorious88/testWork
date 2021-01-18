@@ -1,4 +1,5 @@
 module.exports = {
+    //  для валидации данных удобней использовать что-то вроде https://www.npmjs.com/package/express-validator
     checkDataUserCreate(user) {
         const check = {
             status: null,
@@ -36,7 +37,7 @@ module.exports = {
     },
 
     pagination (query, count) {
-
+        //  в номером страницы считается любой последний query-параметр что может привести к ошибке, лучше парсить строку параметров методом querystring.parse
         const number = query === "/" ?  0 : Number(query.split("=").pop())
 
         let m = count % 10 ?  Math.floor(count / 10) : Math.floor(count / 10) - 1
