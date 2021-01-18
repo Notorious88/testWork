@@ -1,10 +1,15 @@
+//  для контроллеров и моделей лучше использовать классы, с ними удобней работать
+//  Не стоит смешивать promise.then и async/await и использовать что-то одно
+
 const {ITEM} = require("../../../database/model/index")
 const tools = require("../../utils/tools");
 
+//  Логично перенести COUNT_ITEMS в файл ITEM, так как она относится к нему, но лучше вообще не использовать глобальные переменные, а обходиться свойствами классов 
 let COUNT_ITEMS
 
 exports.item_create = async (req, res) => {
     if (req.body.name === undefined) {
+        //  Лучше использовать 422 или 400 ошибку, так как это относится к данным в сущности, а 412 скорее ошибка браузера
         return res.status(412).json({
             success: false,
             massage: "Invalid data"
@@ -36,6 +41,7 @@ exports.item_create = async (req, res) => {
 
 
 exports.item_show = async (req, res) => {
+    //  такой способ хранения количества документов не позволяет использовать фильтрацию и применим только в таком случае
     if (COUNT_ITEMS === undefined) {
         await ITEM.countDocuments()
             .then(number => {
@@ -43,6 +49,7 @@ exports.item_show = async (req, res) => {
             })
     }
 
+    //  нужно использовать объект req.query
     const pageContent = tools.pagination(req.url, COUNT_ITEMS);
 
     await ITEM.find()
@@ -72,6 +79,7 @@ exports.item_show = async (req, res) => {
 }
 
 exports.item_show_one = (req, res) => {
+    //  метода find не вызывает исключения если ничего не найдено и метод работает некорректно при несуществующем id
     ITEM.find({_id: req.params.ID})
         .then(result => {
             if (result[0]) {
